@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text ändern</title>
+</head>
+<body>
+    <h2 id="welcome">Willkommen</h2>
+
+    <script>
+        // JavaScript zum Ändern des Textes
+        document.getElementById("welcome").innerText = "Herzlich Willkommen!";
+    </script>
+    <title>Farbe ändern</title>
+    <style>
+        #colorButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+
+<script> // Aufgabe 2 </script>
+
+    <button id="colorButton">Ändere Farbe</button>
+
+    <script>
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        const button = document.getElementById("colorButton");
+        button.addEventListener("click", function() {
+            button.style.backgroundColor = getRandomColor();
+        });
+    </script>
+
+
+
+
+<script> // Aufgabe 3 </script>
+    
+    <title>Obstliste</title>
+  </head>
+  <body>
+    <ul id="obstListe">
+      <li>Apfel</li>
+      <li>Banane</li>
+      <li>Orange</li>
+    </ul>
+  
+    <script>
+      // Holt alle <li>-Elemente in der Liste
+      let listItems = document.getElementsByTagName('li');
+  
+      // Ändert den Text des zweiten Elements
+      listItems[1].textContent = 'Mango';
+    </script>
+
+<script> // Aufgabe 4</script>
+
+    <div id="container"></div>
+  
+    <script>
+      // Erstelle ein neues <p>-Element
+      let neuerAbsatz = document.createElement('p');
+      
+      // Setze den Textinhalt des neuen <p>-Elements
+      neuerAbsatz.textContent = 'Dies ist ein neuer Absatz';
+      
+      // Füge das <p>-Element zur <div>-Box hinzu
+      document.getElementById('container').appendChild(neuerAbsatz);
+    </script>
+
+
+<script> //Aufagabe 5 </script>
+<title>Event Listener</title>
+
+  <button id="clickBtn">Klick mich</button>
+
+
+  <script>
+    document.getElementById('clickBtn').addEventListener('click', function() {
+      let neuerAbsatz = document.createElement('p');
+      neuerAbsatz.textContent = 'Button wurde geklickt!';
+      document.body.appendChild(neuerAbsatz);
+    });
+  </script>
+
+  <script> // Aufagbe 6 </script>
+
+  <title>Interaktive Farbänderung</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #ccc;
+    }
+  </style>
+
+  <div class="box"></div>
+
+  <script>
+    const box = document.querySelector('.box');
+    box.addEventListener('mouseover', function() {
+      this.style.backgroundColor = 'yellow';
+    });
+    box.addEventListener('mouseout', function() {
+      this.style.backgroundColor = '#ccc';
+    });
+  </script>
+
+
+<script> // Aufgabe 7 </script>
+
+<title>Eingabewert anzeigen</title>
+
+  <input type="text" id="eingabe">
+  <button id="submitBtn">Absenden</button>
+  <script>
+    document.getElementById('submitBtn').addEventListener('click', function() {
+      let eingabewert = document.getElementById('eingabe').value;
+      let neuerAbsatz = document.createElement('p');
+      neuerAbsatz.textContent = eingabewert;
+      document.body.appendChild(neuerAbsatz);
+    });
+  </script>
+
+<script> // Aufgabe 8 </script>
+
+<title>Klassenmanipulation</title>
+<style>
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    margin: 10px;
+  }
+</style>
+
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+
+<script>
+  const boxen = document.getElementsByClassName('box');
+  Array.from(boxen).forEach(box => {
+    box.addEventListener('click', function() {
+      Array.from(boxen).forEach(b => b.style.backgroundColor = 'blue');
+    });
+  });
+</script>
+
+</html>
